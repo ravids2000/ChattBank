@@ -1,0 +1,163 @@
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Header */
+.top-header {
+    display: flex;                 /* logo + title side by side */
+    align-items: center;
+    gap: 100px;                     /* space between logo and title */
+    background-color: #f8f8f8;
+    padding: 15px 30px;
+}
+
+/* Logo image */
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+/* Page title */
+.page-title {
+    margin: 0;                     /* prevents drop below logo */
+    font-size: 36px;
+    color: #00328C;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-family: "Bank Gothic", "BankGothic Md BT",
+    "Arial Black", Arial, sans-serif;
+}
+
+
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* Hero */
+.hero {
+    position: relative;         /* allow overlay */
+    width: 75%;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* Welcome text over hero image */
+.hero-text {
+    position: absolute;
+    top: 10px;
+    left: 50%;                         /* place block in the center horizontally */
+    transform: translateX(-50%);        /* place block in the center horizontally */
+    max-width: 800px;
+
+    color: #00328C;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.6);
+    padding: 12px 18px;
+    border-radius: 6px;
+}
+
+/* Side Menu */
+.side-menu {
+    width: 25%;
+    background-color: #AA8C00;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.side-menu a {
+    display: block;
+    color: #00328C;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 30px 0;
+    font-size: 18px;
+}
+
+.side-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Login Page Styles */
+
+/* Login box over hero image */
+.login-box,
+.form-box {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+/* Each form row */
+.form-row {
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.form-row label {
+    display: block;
+    font-weight: bold;
+    color: #00328C;
+    margin-bottom: 5px;
+}
+
+/* Textboxes */
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #AA8C00;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Buttons container */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Login, Submit button */
+.btn-login,
+.btn-submit {
+    background-color: #AA8C00;
+    color: #00328C;
+    border: none;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Clear button */
+.btn-clear {
+    background-color: #e0e0e0;
+    color: #00328C;
+    border: none;
+    padding: 8px 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+.btn-login:hover,
+.btn-clear:hover,
+.btn-submit:hover{
+    opacity: 0.85;
+}
