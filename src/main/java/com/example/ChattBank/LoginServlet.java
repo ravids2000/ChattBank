@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
+// login will be updated in Lab 6
 public class LoginServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
