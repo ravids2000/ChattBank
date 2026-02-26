@@ -5,6 +5,7 @@ body {
     background-color: #ffffff;
 }
 
+
 /* Header */
 .top-header {
     display: flex;                 /* logo + title side by side */
@@ -118,7 +119,7 @@ body {
 /* Textboxes */
 .form-row input[type="text"],
 .form-row input[type="password"] {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border: 1px solid #AA8C00;
     border-radius: 4px;

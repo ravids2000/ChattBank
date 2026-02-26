@@ -1,5 +1,6 @@
 package com.example.ChattBank.AccountObject;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,17 +11,17 @@ public class Account {
     private String acctNo;
     private String custId;
     private String type;
-    private long balance;
+    private BigDecimal balance;
 
     // ======================== Constructors ==============
     public Account() {
         acctNo = "";
         custId = "";
         type = "";
-        balance = 0;
+        balance = BigDecimal.valueOf(0);
     }
 
-    public Account(String AcctNo, String Cid, String Type, long Balance) {
+    public Account(String AcctNo, String Cid, String Type, BigDecimal Balance) {
         acctNo = AcctNo;
         custId = Cid;
         type = Type;
@@ -31,12 +32,12 @@ public class Account {
     public String getAcctNo() { return acctNo; }
     public String getCustId() { return custId; }
     public String getType() { return type; }
-    public long getBalance() { return balance; }
+    public BigDecimal getBalance() { return balance; }
 
     public void setAcctNo(String AcctNo) { this.acctNo = AcctNo; }
     public void setCustId(String Cid) { this.custId = Cid; }
     public void setType(String Type) { this.type = Type; }
-    public void setBalance(long Balance) { this.balance = Balance; }
+    public void setBalance(BigDecimal Balance) { this.balance = Balance; }
 
     public void display() {
         System.out.println("=======================================");
@@ -64,7 +65,7 @@ public class Account {
 
             setCustId(rs.getString("Cid"));
             setType(rs.getString("Type"));
-            setBalance(rs.getLong("Balance"));
+            setBalance(rs.getBigDecimal("Balance"));
 
         }
         catch(Exception e){
@@ -73,7 +74,7 @@ public class Account {
     } //end selectDB()
 
     // insertDB method
-    public void insertDB(String AcctNo, String Cid, String Type, long Balance) {
+    public void insertDB(String AcctNo, String Cid, String Type, BigDecimal Balance) {
         acctNo = AcctNo;
         custId = Cid;
         type = Type;
@@ -140,7 +141,7 @@ public class Account {
         System.out.println("=======================================");
         System.out.println("Testing insertDB");
         Account a2 = new Account();
-        a2.insertDB("97575", "3075", "MMA", 1000);
+        a2.insertDB("97575", "3075", "MMA", BigDecimal.valueOf(1000));
         a2.display();
         //check database to see if new Student has been added
 

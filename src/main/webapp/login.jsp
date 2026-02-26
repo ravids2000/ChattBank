@@ -31,7 +31,7 @@
         <!-- Login Form overlay laptop image (W3School HTML Tags <form>)-->
         <div class="login-box">
             <!-- for lab3 step 3 removed onsubmit="return validateLogin();"-->
-            <form name="loginForm" action="LoginServletDB" method="post" onsubmit="return validateLogin();" autocomplete="off">
+            <form name="loginForm" action="LoginServlet" method="post" onsubmit="return validateLogin();" autocomplete="off">
 
                 <!-- com.example.ChattBank.CustomerObject.Customer ID row -->
                 <div class="form-row">

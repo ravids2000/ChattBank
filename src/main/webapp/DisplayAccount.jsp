@@ -1,11 +1,11 @@
-<%--
+<%@ page import="java.text.NumberFormat" %><%--
   Created by IntelliJ IDEA.
   User: Ravid
-  Date: 1/29/2026
-  Time: 3:38 PM
+  Date: 2/25/2026
+  Time: 3:02 PM
   To change this template use File | Settings | File Templates.
 
-  Account Search page (blank form)
+  Results page (account data populated)
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -16,6 +16,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<jsp:useBean id="a1"
+             scope="session"
+             class="com.example.ChattBank.AccountObject.Account" />
+
+<!-- Formating the Balance to Currency with cents-->
+<%
+    NumberFormat nf = NumberFormat.getCurrencyInstance();
+    String balanceFormatted = nf.format(a1.getBalance());
+%>
 
 <!-- Header with Logo and Page Title-->
 <header class="top-header">
@@ -39,7 +49,7 @@
                     <input type="text"
                            id="acctNo"
                            name="acctNo"
-                           placeholder="Enter Account No">
+                           value="<jsp:getProperty name='a1' property='acctNo' />">
                 </div>
 
                 <!-- Customer ID row -->
@@ -48,7 +58,8 @@
                     <input type="text"
                            id="custId"
                            name="custId"
-                           placeholder="Customer ID">
+                           value="<jsp:getProperty name='a1' property='custId' />"
+                           readonly>
                 </div>
 
                 <!-- Type row -->
@@ -57,7 +68,8 @@
                     <input type="text"
                            id="type"
                            name="type"
-                           placeholder="CHK / SAV / MMA">
+                           value="<jsp:getProperty name='a1' property='type' />"
+                           readonly>
                 </div>
 
                 <!-- Balance row -->
@@ -66,7 +78,8 @@
                     <input type="text"
                            id="balance"
                            name="balance"
-                           placeholder="$0.00">
+                           value="<%= balanceFormatted %>"
+                           readonly>
                 </div>
 
                 <!-- Buttons row -->
